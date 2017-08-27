@@ -1,0 +1,16 @@
+{% load i18n %}
+<div id="django-messages-panel">
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {% if message.tags == 'success' %}
+                <strong>{% trans 'SUCCESS' %}! </strong>{{ message|safe }}
+            {% elif  message.tags == 'danger' %}
+                <strong>{% trans 'DANGER' %}! </strong>{{ message|safe }}
+            {% elif message.tags == 'info' %}
+                <strong>{% trans 'INFO' %}! </strong>{{ message|safe }}
+            {% else %}
+                <strong>{% trans 'WARNING' %}! </strong>{{ message|safe }}
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

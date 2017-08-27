@@ -1,0 +1,55 @@
+ul li {
+    list-style-type: none;
+}
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 10px 0 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.filter-col {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 0;
+}
+
+.select2-container {
+    min-width: 12em !important;
+}
+
+#table_product_filter {
+    display: none;
+}
+
+#table_purchase_filter {
+    display: none;
+}
+
+#table_sales_filter {
+    display: none;
+}
+
+#table_extra_transaction_filter {
+    display: none;
+}
+
+#table_group_filter {
+    display: none;
+}
+
+tr.odd, tr.even{
+    transition: background 0.5s linear;
+}
+
+.ms-container {
+    width: auto !important;
+}
+
+table {
+    font-size: 9pt;
+}

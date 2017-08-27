@@ -1,0 +1,7 @@
+*.pyc
+/static
+/media
+.idea
+/django_pymes/local_settings.py
+*.mo
+db.sqlite3

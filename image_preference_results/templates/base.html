@@ -1,0 +1,146 @@
+{% load staticfiles i18n %}
+<!DOCTYPE html>
+<html lang="en" data-datatable-lang="{% static 'data/locale/datatable/en.json' %}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>
+            {% block title %}
+                {% trans 'Specialized pharmaceutical center' %}
+            {% endblock %}
+        </title>
+        {% block css %}
+            <!-- Bootstrap Core CSS -->
+            <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+            <link rel="stylesheet" href="{% static 'css/fileinput.min.css' %}">
+
+            <!-- MetisMenu CSS -->
+            <link href="{% static 'vendor/metisMenu/metisMenu.min.css' %}" rel="stylesheet">
+
+            <!-- Custom CSS -->
+            <link href="{% static 'dist/css/sb-admin-2.css' %}" rel="stylesheet">
+
+            <!-- Morris Charts CSS -->
+            <link href="{% static 'vendor/morrisjs/morris.css' %}" rel="stylesheet">
+
+            <!-- Custom Fonts -->
+            <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+            <!-- DataTables CSS -->
+            <link href="{% static 'vendor/datatables-plugins/dataTables.bootstrap.css' %}" rel="stylesheet">
+
+            <!-- DataTables Responsive CSS -->
+            <link href="{% static 'vendor/datatables-responsive/dataTables.responsive.css' %}" rel="stylesheet">
+            <link href="{% static 'css/breadcrumbs.css' %}" rel="stylesheet">
+
+            <!-- datepicker  -->
+            <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap-datepicker3.css' %}"/>
+
+            <!-- modal form  -->
+            <link href="{% static 'css/modal_form.css' %}" rel="stylesheet">
+
+            <link href="{% static 'css/multi-select.css' %}" rel="stylesheet">
+            <!-- General  -->
+            <link href="{% static 'css/general.css' %}" rel="stylesheet">
+    {% endblock css %}
+    {% block extra_css %}{% endblock extra_css %}
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+        <div id="wrapper">
+
+        <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{% url 'home' %}">{% trans 'IMAGE PREFERENCE' %}</a>
+                    </div>
+                    <!-- /.navbar-header -->
+                </div>
+                <!-- /.navbar-header -->
+                {% include 'navbar_controls.html' %}
+                <!-- /.navbar-top-links -->
+                {% include 'menu.html' %}
+                <!-- /.navbar-static-side -->
+            </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        {% block page_title %}
+                            {% if title %}{{ title }}{% else %}{% trans 'Put your title here' %}{% endif %}
+                        {% endblock page_title %}
+                    <br>
+                    <div id="bc1" class="btn-group btn-breadcrumb">
+                        <a href="{% url 'home' %}" class="btn btn-default"><i class="fa fa-home"></i></a>
+                        {% block breadcrumbs %}
+                        {% endblock breadcrumbs %}
+                    </div>
+                    </h1>
+                {% include 'messages.html' %}
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            {% block content %}{% endblock content %}
+        </div>
+        <!-- /#page-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+        {% block js %}
+            <!-- jQuery -->
+            <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+            <!-- Metis Menu Plugin JavaScript -->
+            <script src="{% static 'vendor/metisMenu/metisMenu.min.js' %}"></script>
+
+            <!-- Morris Charts JavaScript -->
+            <script src="{% static 'vendor/raphael/raphael.min.js' %}"></script>
+            <script src="{% static 'vendor/morrisjs/morris.min.js' %}"></script>
+
+            <!-- FileInput JavaScript -->
+            <script src="{% static 'js/fileinput.min.js' %}"></script>
+            <script src="{% static 'js/fileinput_locale_es.js' %}"></script>
+
+            <!-- dataTables  -->
+            <script src="{% static 'vendor/datatables/js/jquery.dataTables.min.js' %}"></script>
+            <script src="{% static 'vendor/datatables-plugins/dataTables.bootstrap.min.js' %}"></script>
+            <script src="{% static 'vendor/datatables-responsive/dataTables.responsive.js' %}"></script>
+
+            <!-- datepicker  -->
+            <script type="text/javascript" src="{% static 'js/libs/bootstrap-datepicker.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/libs/locales/bootstrap-datepicker.en.js' %}"></script>
+
+            <!-- Custom Theme JavaScript -->
+            <script src="{% static 'dist/js/sb-admin-2.js' %}"></script>
+            <script src="{% static 'js/libs/breadcrumbs.js' %}"></script>
+            <script src="{% static 'js/apps.js' %}"></script>
+
+        {% endblock js %}
+        {% block extra_js %}{% endblock extra_js %}
+
+    </body>
+</html>
